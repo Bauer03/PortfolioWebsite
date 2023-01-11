@@ -1,31 +1,54 @@
-.abtm {
-    float: right;
-}
-
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
 
+li {
+    display: inline;
+}
+
 a {
     text-decoration: none;
+    font-family: Bedrock;
+    color: rgb(202, 202, 202);
 }
 
 .navbar {
-    padding: 6vh;
+    margin: 6vh;   
 }
 
 .active {
-    color: aqua;
+    color: rgb(238, 238, 238);
 }
 
 body {
-    background-color: rgb(4, 61, 57);
+    background-color: rgb(4, 53, 61);
     font-family: Bedrock;
 }
 
-.bodydiv {
-    color: white;
+.outsideTxtDiv {
+    color: rgb(202, 202, 202);
     text-decoration: none;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 5vw;
+}
+
+a:hover {
+    color: white;
+    font-size: +1;
+}
+
+.txtDiv {
+    width: 45vw;
+}
+
+.myProjectsDiv {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+  
+.myProjectsDiv:hover {
+    transform: scale(1.1);
 }
