@@ -79,6 +79,15 @@ nav a:hover {
 hr {
     border-top: 1px solid #DEB992;
     border-bottom: 0px;
+    animation-name: example;
+    animation-duration: 1.3s;
+}
+
+@keyframes example {
+    0%{width:1vw;}
+    60%{width:70vw;}
+    80%{width: 90vw;}
+    100%{width: 100vw;}
 }
 
 .outsideMap{
