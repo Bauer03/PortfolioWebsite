@@ -10,45 +10,87 @@ li {
 
 a {
     text-decoration: none;
-    font-family: Bedrock;
-    color: rgb(202, 202, 202);
+    font-family: BrandonGrotesqueWeb-Thin,sans-serif;
 }
 
-.navbar {
-    margin: 6vh;   
-}
-
-.active {
-    color: rgb(238, 238, 238);
+body a {
+    color: #DEB992;
+    font-weight: bolder;
 }
 
 body {
-    background-color: rgb(4, 53, 61);
-    font-family: Bedrock;
+    background-color: #051622;
+    font-family: BrandonGrotesqueWeb-Thin,sans-serif;
 }
 
 .outsideTxtDiv {
-    color: rgb(202, 202, 202);
-    text-decoration: none;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-top: 5vw;
+    color: #DEB992;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 a:hover {
-    color: white;
-    font-size: +1;
+    color: #1BA098;
 }
 
 .txtDiv {
-    width: 45vw;
+    float: left;
+    max-width: 35vw;
+    margin-top: 2vh;
 }
 
-.myProjectsDiv {
-    transform: scale(1);
-    transition: transform 0.3s ease;
-  }
-  
-.myProjectsDiv:hover {
-    transform: scale(1.1);
+nav {
+    position: relative;
+    padding: 6vh;
+    margin-top: 2vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
+
+nav a {
+    transform: scale(1);
+    transition: transform 0.13s ease;
+    color: #1BA098;
+    float: left;
+    margin-right: 6vw;
+}
+
+nav a:hover {
+    transform: scale(1.2);
+}
+
+.imgPfp {
+    max-height:5vh;
+    max-width: 5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5vw;
+}   
+
+.imgTwt {
+    max-height:2vh;
+    max-width: 2vw;
+    float: right;
+    color: #1BA098;
+}
+
+hr {
+    border-top: 1px solid #DEB992;
+    border-bottom: 0px;
+}
+
+.outsideMap{
+    padding: 5vh;
+    float: right;
+    width: 25vw;
+    border: 1px white solid;
+}
+
+#map {
+    max-width:100%;
+    max-height:100%;
+}
+
+  
