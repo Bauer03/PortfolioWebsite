@@ -34,23 +34,20 @@ body {
     max-width: 35vw;
     margin-top: 2vh;
     animation-name: erimcg;
-    animation-duration: 0.8s;
+    animation-duration: 1.5s;
 }
 
 @keyframes erimcg {
     0%{
+        clip-path: inset(0 0 0 100%);
         opacity: 0;
-        margin-top: 300%;
     }
-    30%{
-        margin-top: 40%;
-    }
-    60%{
-        opacity: 0.1;
+    85%{
+        clip-path: inset(0 0 0 0);
     }
     100%{
+        clip-path: inset(0 0 0 0);
         opacity: 1;
-        margin-top: 2vh;
     }
 }
 
@@ -93,7 +90,6 @@ a:hover {
     }
     85%{
         clip-path: inset(0 0 0 0);
-        opacity: 0.7;
     }
     100%{
         clip-path: inset(0 0 0 0);
@@ -110,9 +106,6 @@ a:hover {
       clip-path: inset(0 100% 0 0);
       opacity:0;
     }
-    85%{
-        opacity: 0.7;
-    }
     100% {
       clip-path: inset(0 0 0 0);
       opacity: 1;
@@ -127,15 +120,26 @@ a:hover {
     max-width: 100%;
     transform: scale(1);
     transition: transform 0.3s ease;
-    border-radius: 0.2vw;
+    border-radius: 0.25vw;
     animation: slide 1s ease 1;
-    filter: contrast(1);
 }
 
+
 .beach:hover {
-    transform: scale(1.05);
-    border-radius: 0.2vw;
+    transform: scale(1.05 );
+    border-radius: 0.25vw;
     filter: contrast(1.1);
+}
+
+.imgPfp {
+    max-height:5vh;
+    max-width: 5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    border-radius: 0.2vw;
 }
 
 nav {
@@ -146,7 +150,7 @@ nav {
     margin-right: 15vw;
 }
 
-nav a {
+.navLink {
     transform: scale(1);
     transition: transform 0.13s ease;
     color: #1BA098;
@@ -158,21 +162,16 @@ nav a:hover {
     transform: scale(1.2);
 }
 
-.imgPfp {
-    max-height:5vh;
-    max-width: 5vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 0.5vw;
-}   
-
-.imgTwt {
+.imgInsta {
     max-height:2vh;
     max-width: 2vw;
     float: right;
-    color: #1BA098;
+    transform: scale(1);
+    transition: transform 0.1s ease;
+}
+
+.imgInsta:hover {
+    transform: scale(1.2);
 }
 
 .outsideMap{
@@ -183,9 +182,7 @@ nav a:hover {
     max-width: 25vw;
 }
 
-#map {
+.map {
     max-width:100%;
     max-height:100%;
 }
-
-  
