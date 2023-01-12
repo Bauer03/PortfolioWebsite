@@ -51,10 +51,6 @@ body {
     }
 }
 
-a:hover {
-    color: #1BA098;
-}
-
 .titleHR {
     border-top: 1px solid #DEB992;
     border-bottom: 0px;
