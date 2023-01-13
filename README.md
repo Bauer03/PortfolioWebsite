@@ -1,3 +1,3 @@
-# WebsiteProject
+# Portfolio website
 
-Creating a website; for now, simply to practice my HTML. Perhaps, at some point in the future, this website could showcase my portfolio and projects.
+This website is under construction; the final goal is to have a place to serve as a portfolio and showcase my projects.
