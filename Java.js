@@ -8,9 +8,6 @@ $(document).ready(function(){
       '<img src="' + src + '" class="popup-image">' +
       '</div>'
     );
-
-    $('.popup-image').animate({'height': '100%'}, 200);
-
     $('.popup-overlay').click(function() {
       $(this).remove();
     });

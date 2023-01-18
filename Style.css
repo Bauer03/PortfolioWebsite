@@ -14,33 +14,32 @@ a {
 }
 
 body a {
-    color: #DEB992;
+    color: white;
     font-weight: bolder;
 }
 
 body {
-    /* background-color: #051622; */
-    background: hsla(176, 45%, 66%, 1);
-    background: linear-gradient(90deg, hsla(176, 45%, 66%, 1) 0%, hsla(205, 74%, 8%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(176, 45%, 66%, 1) 0%, hsla(205, 74%, 8%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(176, 45%, 66%, 1) 0%, hsla(205, 74%, 8%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#83D0CB", endColorstr="#051622", GradientType=1 );
-    height: 100em;
+    background-color:#2b2d42;
     font-family: BrandonGrotesqueWeb-Thin,sans-serif;
 }
 
-.abtMeTxt {
-    color: #DEB992;
+.abtMeDiv {
+    color: white;
     margin-left: 15vw;
     margin-right: 15vw;
+    padding: 2.2vw;
+    padding-top: 1vh;
+    margin-bottom: 5vh;
 }
 
-.txtDiv {
+.abtMeTxt {
     float: left;
-    max-width: 35vw;
-    margin-top: 2vh;
+    max-width: 30vw;
     animation-name: erimcg;
     animation-duration: 1.5s;
+    background-color: #5B7E8D;
+    border-radius: 4px;
+    padding:3%;
 }
 
 @keyframes erimcg {
@@ -58,7 +57,7 @@ body {
 }
 
 .titleHR {
-    border-top: 1px solid #81cf96;
+    border-top: 2px solid #ddb892;
     border-bottom: 0px;
     animation-name: example;
     animation-duration: 2.4s;
@@ -80,7 +79,7 @@ body {
 }
 
 .beachHR {
-    border-top: 1px solid #DEB992;
+    border-top: 2px solid #ddb892;
     border-bottom: 0px;
     animation: slideInLeft 1s ease 1;
 }
@@ -125,12 +124,10 @@ body {
     transition: transform 0.3s ease;
     border-radius: 0.25vw;
     animation: slide 1s ease 1;
-
+    box-shadow: 5px 5px 5px #1d2711;
 }
 
 .img {
-    padding: 5%;
-    background-color:#9D948A;
     border-radius: 4px;
 }
 
@@ -161,20 +158,21 @@ nav {
 .navLink {
     transform: scale(1);
     transition: transform 0.2s ease;
-    color: #81cf96;
+    color: #ddb892;
     float: left;
     margin-right: 6vw;
 }
 
 nav a:hover {
     transform: scale(1.1);
-    color: rgb(174, 190, 210);
+    color: #e6ccb2;
 }
 
 .imgInsta {
     max-height:2vh;
     max-width: 2vw;
     float: right;
+    position: relative;
     transform: scale(1.6);
     transition: transform 0.2s ease;
 }
@@ -184,16 +182,10 @@ nav a:hover {
 }
 
 .outsideMap{
-    padding-top: 5vh;
     padding-left: 5vw;
     padding-bottom: 5vh;
     float: right;
     max-width: 25vw;
-}
-
-.map {
-    max-width:100%;
-    max-height:100%;
 }
 
 .allProjects{
@@ -212,10 +204,10 @@ nav a:hover {
     margin-left: 1vw;
     max-width: 25%;
     max-height: 100em;
-    background-color: #81A0cf;
+    background-color: #5B7E8D;
     border-radius: 4px;
     padding: 1.5em;
-    box-shadow: 5px 5px 5px #4f4e4e;
+    box-shadow: 5px 5px 5px #1b2410;
 }
 
 .proj2{
@@ -223,10 +215,10 @@ nav a:hover {
     margin-right: 1vw;
     margin-top: 2vh;
     margin-left: 1vw;
-    background-color: #81a0cf;
+    background-color: #5B7E8D;
     border-radius: 4px;
     padding: 1.5em;
-    box-shadow: 5px 5px 5px #4f4e4e;
+    box-shadow: 5px 5px 5px #1b2410;
 }
 
 .proj3{
@@ -234,21 +226,26 @@ nav a:hover {
     margin-top: 2vh;
     margin-right: 1vw;
     margin-left: 1vw;
-    background-color: #81a0cf;
+    background-color: #5B7E8D;
     border-radius: 4px;
     padding: 1.5em;
-    box-shadow: 5px 5px 5px #4f4e4e;
+    box-shadow: 5px 5px 5px #1b2410;
 }
 
 .projectsTxtDiv {
-    color: #ffffff;
+    color: white;
     margin-left: 15vw;
     margin-right: 15vw;
 }
 
 .projectsHR {
-    border-top: 2px solid #81cf96;
+    border-top: 2px solid #ddb892;
     border-bottom: 0px;
+}
+
+.abtMeHr {
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 .projectsImgDiv {
@@ -256,7 +253,7 @@ nav a:hover {
     background-color: white;
     min-height: 15rem;
     margin-bottom: 2rem;
-    box-shadow: 5px 5px 5px #878787;
+    box-shadow: 5px 5px 5px #3c545e;
     border-radius: 4px;
     transform: scale(1);
     transition: transform 0.3s ease;
@@ -287,94 +284,6 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Carousel CSS */
-
-.carousel {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    font-family: Arial;
-  
-    &__list {
-      display: flex;
-      list-style: none;
-      position: relative;
-      width: 100%;
-      height: 300px;
-      justify-content: center;
-      perspective: 300px;
-    }
-    
-    &__item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 0px;
-      width: 150px;
-      height: 250px;
-      border-radius: 12px;
-      box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
-      position: absolute;
-      transition: all .3s ease-in;
-      
-      &:nth-child(1) {
-        background: linear-gradient(45deg, #2D35EB 0%, #904ED4 100%);
-      }
-      &:nth-child(2) {
-        background: linear-gradient(45deg, #2D35EB 0%, #fdbb2d 100%);
-      }
-      &:nth-child(3) {
-        background: linear-gradient(45deg, #2D35EB 0%, #22c1c3 100%);
-      }
-      &:nth-child(4) {
-        background: linear-gradient(45deg, #fdbb2d 0%, #904ED4 100%);
-      }
-      &:nth-child(5) {
-        background: linear-gradient(45deg, #22c1c3 0%, #904ED4 100%);
-      }
-      
-      &[data-pos="0"] {
-        z-index: 5;
-      }
-      
-      &[data-pos="-1"],
-      &[data-pos="1"] {
-        opacity: 0.7;
-        filter: blur(1px) grayscale(10%);
-      }
-      
-      &[data-pos="-1"] {
-        transform: translateX(-40%) scale(.9);
-        z-index: 4;
-      }
-      
-      &[data-pos="1"] {
-        transform: translateX(40%) scale(.9);
-        z-index: 4;
-      }
-      
-      &[data-pos="-2"],
-      &[data-pos="2"] {
-        opacity: 0.4;
-        filter: blur(3px) grayscale(20%);
-      }
-      
-      &[data-pos="-2"] {
-        transform: translateX(-70%) scale(.8);
-        z-index: 3;
-      }
-      
-      &[data-pos="2"] {
-        transform: translateX(70%) scale(.8);
-        z-index: 3;
-      }
-    }
-  }
-
-/* End Carousel CSS */
-
 @media only screen and (max-width:600px) {
     .proj1 {
         max-width: 100rem;
@@ -385,25 +294,33 @@ nav a:hover {
     .proj3 {
         max-width: 100rem;
     }
-    .txtDiv{
+    .abtMeTxt{
         max-width: 100rem;
     }
     .outsideMap {
         max-width: 100vw;
+        float:center;
     }
     .abtLink {
         float: right;
+    }
+    .beach {
+        margin-top: 5vh;
     }
 }
 
 @media only screen and (max-width:1080px) {
     .proj1 {
-        max-width: 23rem;
+        max-width: 1/3rem;
     }
     .proj2 {
-        max-width: 23rem;
+        max-width: 1/3rem;
     }
     .proj3 {
-        max-width: 23rem;
+        max-width: 1/3rem;
+    }
+    .abtMeTxt {
+        padding-left: 6%;
+        padding-right: 6%;
     }
 }
