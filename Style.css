@@ -324,7 +324,7 @@ nav a:hover {
         animation: slideIn 1s ease 1;
     }
     .imgInsta {
-        
+        opacity: 0;
     }
 
 @keyframes slideIn {
@@ -334,8 +334,7 @@ nav a:hover {
     100% {
         transform: translateY(0);
     }
-    }
-
+}   
 
 @media only screen and (max-width:1080px) {
     .abtMeTxt {
