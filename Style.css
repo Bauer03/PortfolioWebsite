@@ -395,3 +395,15 @@ nav a:hover {
         float: right;
     }
 }
+
+@media only screen and (max-width:1080px) {
+    .proj1 {
+        max-width: 23rem;
+    }
+    .proj2 {
+        max-width: 23rem;
+    }
+    .proj3 {
+        max-width: 23rem;
+    }
+}
