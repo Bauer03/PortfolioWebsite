@@ -190,7 +190,6 @@ nav a:hover {
     padding-left: 1vw;
     padding-right: 1vw;
     padding-bottom: 1vh;
-    flex-wrap: wrap;
     line-height: 140%;
 }
 
@@ -206,7 +205,6 @@ nav a:hover {
     box-shadow: 5px 5px 5px #1b2410;
     animation-name: slideUp;
     animation-duration: 0.7s;
-    min-width: 15rem;
 }
 
 .proj2{
@@ -220,13 +218,11 @@ nav a:hover {
     box-shadow: 5px 5px 5px #1b2410;
     animation-name: slideUp;
     animation-duration: 0.9s;
-    min-width: 15rem;
 }
 
 .proj3{
     max-width: 25%;
     margin-top: 2vh;
-    margin-right: 1vw;
     margin-left: 1vw;
     background-color: #5B7E8D;
     border-radius: 4px;
@@ -234,7 +230,6 @@ nav a:hover {
     box-shadow: 5px 5px 5px #1b2410;
     animation-name: slideUp;
     animation-duration: 1.1s;
-    min-width: 15rem;
 }
 
 @keyframes slideUp {
@@ -302,6 +297,13 @@ nav a:hover {
 @media only screen and (max-width:600px) {
     .allProjects {
         animation: slideIn 1s;
+        flex-wrap: wrap;
+        padding: 0px;
+    }
+    .projectsTxtDiv {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        max-width: 90vw;
     }
     .proj1 {
         max-width: 100rem;
@@ -316,17 +318,23 @@ nav a:hover {
         max-width: 100rem;
     }
     .abtMeImgDiv {
-        max-width: 100vw;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .beach {
     }
     .abtLink {
         float: right;
     }
     .abtMeTxt {
         margin-bottom: 10%;
-        animation: slideIn 1s ease 1;    
+        animation: slideIn 1s ease 1;
+        padding: 5vw;
     }
     .abtMeDiv {
         animation: slideIn 1s ease 1;
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
     .imgInsta {
         opacity: 0;
@@ -341,14 +349,33 @@ nav a:hover {
     }   
 }
 
-@media only screen and (max-width:2180px) {
+@media only screen and (max-width:1920px) {
     .proj1 {
         min-width: 250px;
+        max-width: fit-content;
     }
     .proj2 {
         min-width: 250px;
+        max-width: fit-content;
     }
     .proj3 {
         min-width: 250px;
+        max-width: fit-content;
+    }
+    .allProjects {
+        padding-right: 2vw;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .abtMeTxt {
+        max-width: 100rem;
+        margin-bottom: 5vh;
+    }
+    .beach {
+        max-width: 500px;
+    }
+    .abtMeImgDiv {
+        max-width: 70vw;
     }
 }
