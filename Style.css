@@ -14,27 +14,33 @@ a {
 }
 
 body a {
-    color: #DEB992;
+    color: white;
     font-weight: bolder;
 }
 
 body {
-    background-color: #051622;
+    background-color:#2b2d42;
     font-family: BrandonGrotesqueWeb-Thin,sans-serif;
 }
 
-.outsideTxtDiv {
-    color: #DEB992;
+.abtMeDiv {
+    color: white;
     margin-left: 15vw;
     margin-right: 15vw;
+    padding: 2.2vw;
+    padding-top: 1vh;
+    margin-bottom: 5vh;
 }
 
-.txtDiv {
+.abtMeTxt {
     float: left;
-    max-width: 35vw;
-    margin-top: 2vh;
-    animation-name: erimcg;
-    animation-duration: 1.5s;
+    max-width: 30vw;
+    background-color: #5B7E8D;
+    border-radius: 4px;
+    padding:3%;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    text-shadow: 0px 0px 1px #1b2410;
 }
 
 @keyframes erimcg {
@@ -52,7 +58,7 @@ body {
 }
 
 .titleHR {
-    border-top: 1px solid #DEB992;
+    border-top: 2px solid #ddb892;
     border-bottom: 0px;
     animation-name: example;
     animation-duration: 2.4s;
@@ -74,9 +80,8 @@ body {
 }
 
 .beachHR {
-    border-top: 1px solid #DEB992;
+    border-top: 2px solid #ddb892;
     border-bottom: 0px;
-    animation: slideInLeft 1s ease 1;
 }
 
 @keyframes slideInLeft {
@@ -94,7 +99,8 @@ body {
 }
 
 .beachTxt {
-    padding-top: 7vh;
+    padding-top: 4vh;
+    text-shadow: 0px 0px 1px #1b2410;
 }
 
 @keyframes slide {
@@ -107,23 +113,22 @@ body {
       opacity: 1;
     }
   }
-  
-.beachTxt {
-    animation: slide 1.2s ease 1;
-}
 
 .beach {
     max-width: 100%;
-    max-height: 100%;
     transform: scale(1);
     transition: transform 0.3s ease;
     border-radius: 0.25vw;
-    animation: slide 1s ease 1;
+    box-shadow: 5px 5px 5px #1d2711;
+}
+
+.img {
+    border-radius: 4px;
 }
 
 .beach:hover {
-    transform: scale(1.05 );
-    border-radius: 0.25vw;
+    transform: scale(1.02 );
+    border-radius: 0.3vw;
     filter: contrast(1.1);
 }
 
@@ -134,8 +139,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transform-origin: center;
-    border-radius: 0.2vw;
+    border-radius: 4px;
 }
 
 nav {
@@ -147,57 +151,230 @@ nav {
 
 .navLink {
     transform: scale(1);
-    transition: transform 0.13s ease;
-    color: #869ba9;
+    transition: transform 0.2s ease;
+    color: #ddb892;
     float: left;
     margin-right: 6vw;
 }
 
 nav a:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+    color: #e6ccb2;
 }
 
 .imgInsta {
     max-height: 2em;
     max-width: 2em;
     float: right;
-    transform: scale(1);
-    transition: transform 0.1s ease;
+    position: relative;
+    transform: scale(1.6);
+    transition: transform 0.2s ease;
 }
 
 .imgInsta:hover {
-    transform: scale(1.2);
+    transform: scale(1.8);
 }
 
-.outsideMap{
-    padding-top: 5vh;
+.abtMeImgDiv{
     padding-left: 5vw;
     padding-bottom: 5vh;
     float: right;
     max-width: 25vw;
-}
-
-.map {
-    max-width:100%;
-    max-height:100%;
+    animation-name: slideUp;
+    animation-duration: 1s;
 }
 
 .allProjects{
-
+    display: flex;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 1vh;
+    line-height: 140%;
 }
 
 .proj1{
-    margin-right: 3%;
-    max-width: 30%;
+    margin-right: 1vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    max-width: 25%;
+    max-height: 100em;
+    background-color: #5B7E8D;
+    border-radius: 4px;
+    padding: 1.5em;
+    box-shadow: 5px 5px 5px #1b2410;
+    animation-name: slideUp;
+    animation-duration: 0.7s;
 }
 
 .proj2{
-    margin-right: 3%;
-    max-width: 30%;
+    max-width: 25%;
+    margin-right: 1vw;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    background-color: #5B7E8D;
+    border-radius: 4px;
+    padding: 1.5em;
+    box-shadow: 5px 5px 5px #1b2410;
+    animation-name: slideUp;
+    animation-duration: 0.9s;
 }
 
 .proj3{
-    margin-right: 3%;
-    max-width: 30%;
-    max-height: 50em;
+    max-width: 25%;
+    margin-top: 2vh;
+    margin-left: 1vw;
+    background-color: #5B7E8D;
+    border-radius: 4px;
+    padding: 1.5em;
+    box-shadow: 5px 5px 5px #1b2410;
+    animation-name: slideUp;
+    animation-duration: 1.1s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(150%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.projectsTxtDiv {
+    color: white;
+    text-shadow: 0px 0px 1px #1b2410;
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.projectsHR {
+    border-top: 2px solid #ddb892;
+    border-bottom: 0px;
+}
+
+.abtMeHr {
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+.projectsImgDiv {
+    padding-bottom: 1vh;
+    background-color: white;
+    min-height: 15rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 5px #3c545e;
+    border-radius: 4px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.projectsImgDiv:hover {
+    transform: scale(1.05);
+    border-radius: 5px;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+}
+
+.popup-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width:600px) {
+    .allProjects {
+        animation: slideIn 1s;
+        flex-wrap: wrap;
+        padding: 0px;
+    }
+    .projectsTxtDiv {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        max-width: 90vw;
+    }
+    .proj1 {
+        max-width: 100rem;
+    }
+    .proj2 {
+        max-width: 100rem;
+    }
+    .proj3 {
+        max-width: 100rem;
+    }
+    .abtMeTxt{
+        max-width: 100rem;
+    }
+    .abtMeImgDiv {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .beach {
+    }
+    .abtLink {
+        float: right;
+    }
+    .abtMeTxt {
+        margin-bottom: 10%;
+        animation: slideIn 1s ease 1;
+        padding: 5vw;
+    }
+    .abtMeDiv {
+        animation: slideIn 1s ease 1;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    .imgInsta {
+        opacity: 0;
+    }
+    @keyframes slideIn {
+        0% {
+            transform: translateY(150%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }   
+}
+
+@media only screen and (max-width:1920px) {
+    .proj1 {
+        min-width: 250px;
+        max-width: fit-content;
+    }
+    .proj2 {
+        min-width: 250px;
+        max-width: fit-content;
+    }
+    .proj3 {
+        min-width: 250px;
+        max-width: fit-content;
+    }
+    .allProjects {
+        padding-right: 2vw;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .abtMeTxt {
+        max-width: 100rem;
+        margin-bottom: 5vh;
+    }
+    .beach {
+        max-width: 500px;
+    }
+    .abtMeImgDiv {
+        max-width: 70vw;
+    }
 }
