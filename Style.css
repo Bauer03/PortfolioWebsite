@@ -141,7 +141,6 @@ body {
 nav {
     position: relative;
     padding: 6vh;
-    margin-top: 2vh;
     margin-left: 15vw;
     margin-right: 15vw;
 }
@@ -159,8 +158,8 @@ nav a:hover {
 }
 
 .imgInsta {
-    max-height:2vh;
-    max-width: 2vw;
+    max-height: 2em;
+    max-width: 2em;
     float: right;
     transform: scale(1);
     transition: transform 0.1s ease;
