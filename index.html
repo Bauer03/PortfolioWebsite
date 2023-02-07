@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <title>
-            My Projects
+            About Me
         </title>
-        <!--CSS file-->
-        <link rel="stylesheet" type="text/css" href="Style.css" /> 
-        <!--Make website correctly mobile-responsive-->
+
+        <!--Make website mobile-responsive-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <!--Favicons (For Safari/Chrome/Mobile Bookmarks/Windows Start Menu-->
         <link rel="apple-touch-icon" sizes="180x180" href="Images/FaviconPkg/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="Images/FaviconPkg/favicon-32x32.png">
@@ -18,72 +18,145 @@
         <meta name="msapplication-TileColor" content="#9eadc0">
         <meta name="theme-color" content="#9eadc0">
 
-        <script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
-        <script src="Java.js"></script>
-    </head>
-    <body>
-        <!--Navbar-->
-        <nav>
-            <ul>
-                <li>
-                    <a class="mprLink navLink active" href="index.html">
-                        Projects
-                    </a>
-                </li>
-                <li>
-                    <a class="abtLink navLink" href="aboutme.html">
-                        About
-                    </a>
-                </li>
-                <li>
-                    <img class="imgPfp" src="/Images/pfpBeige.png" alt="Paul Bauer">
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/palexisbauer/" target="_blank">
-                        <img class="imgInsta" src="/Images/InstaLogoBeige.psd.png" alt="Twt Logo">
-                    </a>
-                </li>
-            </ul>
-        </nav><br>
+        <!--Import fonts from Google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
 
-        <!--Website content-->
-        <div class="projectsTxtDiv">
-            <div class="horizontalRule">
-                <hr class="titleHR">
-            </div><br>
-                <div class="allProjects">
-                            <div class="proj1">
-                                <div class="projectsImgDiv">
-                                    <img src="/Images/adoptionWebsiteScreen.png" class="popup-image">
-                                </div>
-                                <hr class="projectsHR">
-                                <h3>Adoption Project</h3>
-                                    In my AP Research class, during the 2021-2022 school year, 
-                                    I created a simple website to collect data on the impact of international adoption on short term 
-                                    memory, which I then hosted on <a href="https://www.godaddy.com" target="_blank" class="">
-                                    GoDaddy</a>. This project recieved a 5/5 from CollegeBoard.
-                            </div>
-                            <div class="proj2">
-                                <div class="projectsImgDiv">
-                                    <img src="/Images/adoptionWebsiteScreen.png" class="popup-image">
-                                </div>
-                                <hr class="projectsHR">
-                                <h3>Lorem Ipsum</h3>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores reiciendis eaque
-                                    neque veritatis eligendi vel maxime aliquid vitae similique ipsa dolore earum sint, 
-                                    quos unde voluptas corrupti? Nisi, magnam praesentium!  
-                            </div>
-                            <div class="proj3">
-                                <div class="projectsImgDiv">
-                                    <img src="/Images/adoptionWebsiteScreen.png" class="popup-image">
-                                </div>
-                                <hr class="projectsHR">
-                                <h3>Lorem Ipsum</h3>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores reiciendis eaque
-                                    neque veritatis eligendi vel maxime aliquid vitae similique ipsa dolore earum sint, 
-                                    quos unde voluptas corrupti? Nisi, magnam praesentium!
-                            </div>                   
-                </div>
+        <!--Personal CSS-->
+        <link rel="stylesheet" href="style.css">
+
+        <!--Bootstrap CSS integration-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+
+    <body class="bodyDiv" style="background-color: #ddb892;">
+        <div class="justify-content-end row">
+            <div class="col-1 mt-5 me-5 text-end" id="lightDiv">
+                <a href="#" class="lightbulbA">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightbulb-fill lightbulb" id="bulb" viewBox="0 0 16 16">
+                        <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964
+                             1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
+        <div class="container"> 
+
+            <!--Paul Bauer large text-->
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-10 col-lg-10 col-9">
+                    <h1 class="text-uppercase text-center nameH1 mb-0">
+                        <div class="Paul" id="paulDiv">
+                            Paul
+                        </div>
+                    </h1>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-9 scrollBox text-uppercase text-center">
+                                <div class="m-scroll">
+                                    <span  class="scrollTxt" id="firstPart">
+                                        College student • Computer Science Major • Aspiring software engineer • 19 years old • French/American •
+                                    </span>
+                                    <span class="scrollTxt" id="secondPart">
+                                        College student • Computer Science Major • Aspiring software engineer • 19 years old • French/American •
+                                    </span>                                                                    
+                                </div>
+                            </div>
+                        </div>
+                    <h1 class="text-uppercase text-center nameH1 mb-0 mt-4 mt-sm-0">
+                        <div class="Bauer" id="bauerDiv">
+                            Bauer
+                        </div>
+                    </h1>
+                </div>
+            </div>
+            
+            <!--Bouncing arrow-->
+            <div class="container-fluid mb-5">
+                <div class="text-center text-uppercase mb-5 arrowDiv">
+                    <a href="#" id="arrowA" class="arrowA">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-down-short bouncingArrow" id="arrowImg" viewBox="0 0 16 16">
+
+                            <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708
+                            0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"/>
+
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div> <!--End of the container div-->
+
+        <!--About me section-->
+            <div class="row mt-5 d-flex justify-content-center aboutDiv changePtr">
+                <div class="col-6 col-sm-10">
+                    <div class="fs-3 fs-sm-5">
+                        <div class="text-center">
+                            <div class="text-uppercase display-1 aboutBtn Btn">
+                                About
+                            </div>
+                        </div>
+                        <div class="aboutTxt mt-2"> <!-- This text should be revealed on click of the "about" button above-->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam pariatur illo omnis. 
+                            Eum harum veritatis nesciunt neque voluptatem perspiciatis officia consectetur eius impedit 
+                            facere. Eius iusto in impedit excepturi iure. Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Voluptatem quibusdam voluptatibus doloremque quas natus illo cum numquam 
+                            officia totam. Molestias ipsam, non explicabo commodi iste quidem quasi id. Ab, recusandae.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center  secondDiv changePtr">
+                <div class="col-6 col-sm-10">
+                    <div class="fs-3 fs-sm-5">
+                        <div class="text-center">
+                            <div class="text-uppercase display-1 secondBtn Btn">
+                                Lorem Ipsum
+                            </div>
+                        </div>
+                        <div class="secondTxt mt-2"> <!-- This text should be revealed on click of the "about" button above-->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam pariatur illo omnis. 
+                            Eum harum veritatis nesciunt neque voluptatem perspiciatis officia consectetur eius impedit 
+                            facere. Eius iusto in impedit excepturi iure. Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Voluptatem quibusdam voluptatibus doloremque quas natus illo cum numquam 
+                            officia totam. Molestias ipsam, non explicabo commodi iste quidem quasi id. Ab, recusandae.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center contactDiv mb-5 changePtr">
+                <div class="col-9 col-sm-10">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col text-center">
+                            <div class="text-uppercase display-1 contactBtn Btn">
+                                Contact
+                            </div>
+                        </div>
+                        <div class="col contactTxt mt-2 fs-3 fs-sm-5"> <!-- This text should be revealed on click of the "about" button above-->
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam pariatur illo omnis. 
+                            Eum harum veritatis nesciunt neque voluptatem perspiciatis officia consectetur eius impedit 
+                            facere. Eius iusto in impedit excepturi iure. Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Voluptatem quibusdam voluptatibus doloremque quas natus illo cum numquam 
+                            officia totam. Molestias ipsam, non explicabo commodi iste quidem quasi id. Ab, recusandae.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer mt-5 mb-2" style="opacity: 0;">
+            <div class="row d-flex justify-content-center mb-5">
+                <div class="col text-center">
+                    © Paul Bauer 2023
+                </div>
+            </div>
+
+
+        <!--Bootstrap JavaScript intergration-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!--Personal JavaScript-->
+        <script src="java.js"></script>
     </body>
 </html>
