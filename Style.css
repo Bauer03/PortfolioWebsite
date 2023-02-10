@@ -47,8 +47,8 @@
     transform: scale(1.2);
 }
 
-.bodyDiv, .Paul, .Bauer {
-    transition: background-color 0.7s, color 0.7s;
+.bodyDiv, .Paul, .Bauer, .aboutDiv, .secondDiv, .contactDiv, .Btn {
+    transition: background-color 0.7s, color 0.3s;
 }
 
 .bouncingArrow, .lightbulb {
@@ -57,6 +57,22 @@
 
 .scrollBox, #firstPart, #secondPart {
     transition: background-color 0.7s, color 0.7s;
+}
+
+.isBeige {
+    color: #ddb892;
+}
+
+.isBlack {
+    color:black;
+}
+
+.bgBlack {
+    background-color: black;
+}
+
+.bgBeige {
+    background-color: #ddb892;
 }
 
 #lightDiv {
@@ -90,16 +106,10 @@
 }
 
 .contactDiv {
-    background-color: #ddb892;
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
     color:black;
-}
-
-.contactDiv:hover{
-    animation: changeColor 0.5s;
-    background-color: white;   
 }
 
 .secondTxt {
@@ -117,14 +127,23 @@
 }
 
 .secondDiv{
-    background-color: #ddb892;
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
     color:black;
 }
 
+.contactDiv:hover{
+    animation: changeColor 0.5s;
+    background-color: white;   
+}
+
 .secondDiv:hover{
+    animation: changeColor 0.5s;
+    background-color: white;
+}
+
+.aboutDiv:hover {
     animation: changeColor 0.5s;
     background-color: white;
 }
@@ -144,16 +163,10 @@
 }
 
 .aboutDiv {
-    background-color: #ddb892;
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
     color: black;
-}
-
-.aboutDiv:hover {
-    animation: changeColor 0.5s;
-    background-color: white;
 }
 
 .Btn {
@@ -176,7 +189,7 @@
 
 @keyframes changeColor {
     0% {
-        background-color: #ddb892;
+        background-color: inherit;
     }
     100% {
         background-color: white;
@@ -184,8 +197,7 @@
 }
 
 .lightbulb {
-    max-width: 3vw;
-    color:black;
+    max-width: 6vmin;
     animation: wobble 3s linear infinite 2.2s;
     transform: scale(1);
 }
@@ -216,8 +228,7 @@
 }
 
 .Paul, .Bauer {
-    color: black;
-    font-size: 15vw;
+    font-size: 25vmin;
     font-family: 'Comfortaa', sans-serif;
     font-weight: bolder;
 }
@@ -293,7 +304,6 @@
 
 .scrollBox {
     position: relative;
-    background-color: black;
     overflow: hidden;
     z-index: 1;
     border-radius: 4vw;
@@ -312,7 +322,6 @@
   }
   
 #firstPart, #secondPart {
-    color:#ddb892;
     font-weight: bold;
 }
 

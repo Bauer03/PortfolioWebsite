@@ -59,9 +59,10 @@ button.addEventListener("click", function() {
     });
   });
 
-// Disappear on click
+// Disable arrow after click + scroll
 
-document.getElementById("arrowA").addEventListener("click", function(){
+let arrowId = document.getElementById("arrowA");
+arrowId.addEventListener("click", function(){
   this.href = "javascript:void(0)";
   this.style.pointerEvents = "none";
   this.style.cursor = "default";
@@ -74,14 +75,27 @@ window.onscroll = function() {
 
 function checkPosition() {
   if (window.pageYOffset === 0) {
-    document.getElementById("arrowA").href = "#"
-    document.getElementById("arrowA").style.pointerEvents = "auto";
-    document.getElementById("arrowA").style.cursor = "pointer";
-    document.getElementById("arrowA").style.opacity = "1";
+    arrowId.href = "#"
+    arrowId.style.pointerEvents = "auto";
+    arrowId.style.cursor = "pointer";
+    arrowId.style.opacity = "1";
   }
 }
 
 // Add color change to elements when lightbulb is clicked
+
+/* 
+  * add the "BgBlack" class to elements with the "startBgBlack" class.
+
+  * define Black in CSS as a class which transitions from color: #ddb892 to color: black
+  * define BgBlack in CSS as a class which transitions from background-color: #ddb892 to background-color: black
+
+  * When lightbulb is clicked, add the "Black" class to elements with the "startBlack" class.
+  * When lightbulb is clicked, add the "BgBlack" class to elements with startBgBlack
+  
+  * If an element has the "bgBlack" class and lightbulb is clicked, "bgBlack" class is removed and "bgWhite" class is added.
+
+*/
 
 var lightOn = true;
 
@@ -92,35 +106,92 @@ var arrow = document.querySelector(".bouncingArrow");
 var scrollBox = document.querySelector(".scrollBox");
 var fPart = document.getElementById("firstPart");
 var sPart = document.getElementById("secondPart");
-
+var aboutBtn = document.querySelector(".aboutBtn");
+var secondBtn = document.querySelector(".secondBtn");
+var contactBtn = document.querySelector(".contactBtn");
+var btnDivs = document.querySelectorAll(".changePtr");
 var lightbulb = document.querySelector(".lightbulb");
+var footer = document.querySelector(".botFooter");
+
+var startBgBeige = document.querySelectorAll(".startBgBeige");
+var startBgBlack = document.querySelectorAll(".startBgBlack");
 
 lightbulb.addEventListener("click", function() {
     if (lightOn) {
-        bodyDiv.style.backgroundColor = "black";
-        paul.style.color = "#ddb892";
-        lightbulb.style.color = "#ddb892";
-        bauer.style.color = "#ddb892";
-        arrow.style.color = "#ddb892";
-        scrollBox.style.backgroundColor = "#ddb892";
-        fPart.style.color = "black";
-        sPart.style.color = "black";
+        paul.classList.add("isBeige");
+        paul.classList.remove("isBlack");
+        lightbulb.classList.add("isBeige");
+        lightbulb.classList.remove("isBlack");
+        bauer.classList.add("isBeige");
+        bauer.classList.remove("isBlack");
+        arrow.classList.add("isBeige");
+        arrow.classList.remove("isBlack");
+        fPart.classList.add("isBlack");
+        fPart.classList.remove("isBeige");
+        sPart.classList.add("isBlack");
+        sPart.classList.remove("isBeige");
+        aboutBtn.classList.add("isBeige");
+        aboutBtn.classList.remove("isBlack");
+        secondBtn.classList.add("isBeige");
+        secondBtn.classList.remove("isBlack");
+        contactBtn.classList.add("isBeige");
+        contactBtn.classList.remove("isBlack");
+        footer.classList.add("isBeige");
+        footer.classList.remove("isBlack");
 
+        btnDivs.forEach(function(elem) {
+          elem.classList.add("bgBlack");
+          elem.classList.remove("bgBeige");
+        });
+
+        startBgBeige.forEach(function(elem) {
+          elem.classList.add("bgBlack");
+          elem.classList.remove("bgBeige");
+        });
+        startBgBlack.forEach(function(elem) {
+          elem.classList.add("bgBeige");
+          elem.classList.remove("bgBlack");
+        });
 
         lightOn = false;
-    } else {
-        bodyDiv.style.backgroundColor = "#ddb892";
-        paul.style.color = "black";
-        lightbulb.style.color = "black";
-        bauer.style.color = "black";
-        arrow.style.color = "black";
-        scrollBox.style.backgroundColor = "black";
-        fPart.style.color = "#ddb892";
-        sPart.style.color = "#ddb892";
+  } else {
+      paul.classList.remove("isBeige");
+      paul.classList.add("isBlack");
+      lightbulb.classList.remove("isBeige");
+      lightbulb.classList.add("isBlack");
+      bauer.classList.remove("isBeige");
+      bauer.classList.add("isBlack");
+      arrow.classList.remove("isBeige");
+      arrow.classList.add("isBlack");
+      fPart.classList.remove("isBlack");
+      fPart.classList.add("isBeige");
+      sPart.classList.remove("isBlack");
+      sPart.classList.add("isBeige");
+      aboutBtn.classList.remove("isBeige");
+      aboutBtn.classList.add("isBlack");
+      secondBtn.classList.remove("isBeige");
+      secondBtn.classList.add("isBlack");
+      contactBtn.classList.remove("isBeige");
+      contactBtn.classList.add("isBlack");
+      footer.classList.remove("isBeige");
+      footer.classList.add("isBlack");
 
+      startBgBeige.forEach(function(elem) {
+        elem.classList.remove("bgBlack");
+        elem.classList.add("bgBeige");
+      });
+      startBgBlack.forEach(function(elem) {
+        elem.classList.remove("bgBeige");
+        elem.classList.add("bgBlack");
+      });
 
-        lightOn = true;
-    }
+      btnDivs.forEach(function(elem) {
+        elem.classList.remove("bgBlack");
+        elem.classList.add("bgBeige");
+      });
+
+      lightOn = true;
+  }
 });
 
 // Open and close text section on click 
