@@ -199,6 +199,7 @@ lightbulb.addEventListener("click", function() {
 document.querySelector(".aboutDiv").addEventListener("click", function() {
   var aboutTxt = document.querySelector(".aboutTxt");
   aboutTxt.classList.toggle("show");
+  
 });
 
 document.querySelector(".secondDiv").addEventListener("click", function() {

@@ -136,16 +136,19 @@
 .contactDiv:hover{
     animation: changeColor 0.5s;
     background-color: white;   
+    animation-fill-mode: forwards;
 }
 
 .secondDiv:hover{
     animation: changeColor 0.5s;
     background-color: white;
+    animation-fill-mode: forwards;
 }
 
 .aboutDiv:hover {
     animation: changeColor 0.5s;
     background-color: white;
+    animation-fill-mode: forwards;
 }
 
 .aboutTxt {
