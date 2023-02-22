@@ -1,3 +1,21 @@
+/* Color theme */
+
+.default {
+    --bckg: #ddb892;
+    --bckg-sec: black;
+    --txtColor: black;
+    --header: black;
+    --nestedTxt: white;
+}
+
+.darkTheme {
+    --bckg: black;
+    --bckg-sec: #ddb892;
+    --txtColor: #ddb892;
+    --header:#ddb892;
+    --nestedTxt:white;
+}
+
 /* Arrow intro animation */
 
 .arrowDiv, .slideUp-animation {
@@ -24,7 +42,6 @@
 .bouncingArrow {
     margin-bottom: 8vh;
     max-width:6vw; 
-    color:black;
     animation: bounce 0.8s;
     animation-direction: alternate;
     animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
@@ -51,28 +68,27 @@
     transition: background-color 0.7s, color 0.3s;
 }
 
+.bodyDiv{
+    background-color: var(--bckg);
+}
+
+.Btn {
+    color: var(--txtColor);
+}
+
+.Paul, .Bauer {
+    color: var(--txtColor);
+}
+
 .bouncingArrow, .lightbulb {
     transition: background-color 0.7s, color 0.7s;
+    color: var(--txtColor);
 }
 
 .scrollBox, #firstPart, #secondPart {
     transition: background-color 0.7s, color 0.7s;
-}
-
-.isBeige {
-    color: #ddb892;
-}
-
-.isBlack {
-    color:black;
-}
-
-.bgBlack {
-    background-color: black;
-}
-
-.bgBeige {
-    background-color: #ddb892;
+    background-color: var(--bckg-sec);
+    color: var(--bckg);
 }
 
 #lightDiv {
@@ -92,12 +108,12 @@
 }
 
 .contactTxt {
-    color: black;
     font-family: 'Comfortaa', sans-serif;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     max-height: 0;
     display: none;
+    color: var(--nestedTxt-def);
 }
 
 .contactTxt.show {
@@ -109,16 +125,16 @@
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
-    color:black;
+    background-color: var(--bckg);
 }
 
 .secondTxt {
-    color: black;
     font-family: 'Comfortaa', sans-serif;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     max-height: 0;
     display: none;
+    color: var(--nestedTxt-def);
 }
 
 .secondTxt.show {
@@ -130,34 +146,31 @@
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
-    color:black;
+    background-color: var(--bckg);
 }
 
 .contactDiv:hover{
-    animation: changeColor 0.5s;
-    background-color: white;   
+    animation: changeColor 0.5s; 
     animation-fill-mode: forwards;
 }
 
 .secondDiv:hover{
     animation: changeColor 0.5s;
-    background-color: white;
     animation-fill-mode: forwards;
 }
 
 .aboutDiv:hover {
     animation: changeColor 0.5s;
-    background-color: white;
     animation-fill-mode: forwards;
 }
 
 .aboutTxt {
-    color: black;
     font-family: 'Comfortaa', sans-serif;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     max-height: 0;
     display: none;
+    color: var(--nestedTxt-def);
 }
 
 .aboutTxt.show{
@@ -169,7 +182,7 @@
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
-    color: black;
+    background-color: var(--bckg);
 }
 
 .Btn {
@@ -195,7 +208,7 @@
         background-color: inherit;
     }
     100% {
-        background-color: white;
+        background-color: var(--nestedTxt);
     }
 }
 
