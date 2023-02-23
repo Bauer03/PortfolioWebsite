@@ -83,11 +83,25 @@ function checkPosition() {
 }
 
 // Change colors when lightbulb is clicked
+var lightbulb = document.querySelector('.lightbulb');
+var bodyDiv = document.querySelector(".bodyDiv");
+var disc = document.getElementById("discLogo");
+var insta = document.getElementById("instaLogo");
+var twitter = document.getElementById("twtLogo");
 
-document.querySelector(".lightbulb").addEventListener("click", function() {
-  var body = document.querySelector(".bodyDiv");
-  body.classList.toggle("default");
-  body.classList.toggle("darkTheme");
+
+lightbulb.addEventListener("click", function() {
+  bodyDiv.classList.toggle("default");
+  bodyDiv.classList.toggle("darkTheme");
+  if (bodyDiv.classList.contains('default')) {
+    disc.src = 'Images/discordBlack.png';
+    insta.src = 'Images/instaBlack.png';
+    twitter.src = 'Images/twitterBlack.png';
+  } else if (bodyDiv.classList.contains('darkTheme')) {
+    disc.src = 'Images/discordBeige.png';
+    insta.src = 'Images/instaBeige.png';
+    twitter.src = 'Images/twitterBeige.png';
+  }
 });
 
 // Open and close text section on click 

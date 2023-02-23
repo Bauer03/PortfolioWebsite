@@ -64,6 +64,16 @@
     transform: scale(1.2);
 }
 
+.socialImg {
+    height: 6vmin;
+    transform: scale(1);
+    transition-duration: 0.25s;
+}
+
+.socialImg:hover {
+    transform: scale(1.06);
+}
+
 .bodyDiv, .Paul, .Bauer, .aboutDiv, .secondDiv, .contactDiv, .Btn {
     transition: background-color 0.7s, color 0.3s;
 }
