@@ -89,7 +89,6 @@ var disc = document.getElementById("discLogo");
 var insta = document.getElementById("instaLogo");
 var twitter = document.getElementById("twtLogo");
 
-
 lightbulb.addEventListener("click", function() {
   bodyDiv.classList.toggle("default");
   bodyDiv.classList.toggle("darkTheme");

@@ -86,7 +86,7 @@
     color: var(--txtColor);
 }
 
-.Paul, .Bauer {
+.Paul, .Bauer, .botFooter {
     color: var(--txtColor);
 }
 
@@ -96,7 +96,7 @@
 }
 
 .scrollBox, #firstPart, #secondPart {
-    transition: background-color 0.7s, color 0.7s;
+    transition: background-color 0.7s, color 0.3s;
     background-color: var(--bckg-sec);
     color: var(--bckg);
 }
@@ -340,7 +340,7 @@
   .m-scroll {
     overflow: hidden;
     white-space: nowrap;
-    animation: scrollText 20s infinite linear 2s;
+    animation: scrollText 20s infinite linear 1.6s;
     margin: 0;
     padding: 0;
     font-size: 0;
