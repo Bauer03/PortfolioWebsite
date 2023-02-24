@@ -1,86 +1,19 @@
-window.onload = function() {
-  // Try to read from local storage, otherwise set to default
-  let currentTheme = localStorage.getItem("mytheme") || "default";
-  let bodyDiv = document.querySelector(".bodyDiv");
-  var lightbulb = document.querySelector(".lightbulb");
-  var disc = document.getElementById("discLogo");
-  var insta = document.getElementById("instaLogo");
-  var twitter = document.getElementById("twtLogo");
-  
-  // Set the theme that we read from local storage
-  setTheme("default", currentTheme);
+// Arrow button, scroll animation on click
 
-  // Add click event listener
-  lightbulb.addEventListener("click", function(){
-    // Get the user's choice from the event object `e`.
-    let newTheme = null;
+let button = document.getElementById("arrowA");
+let target = document.querySelector(".arrowA");
 
-    if(currentTheme == 'default') {
-      disc.src = 'Images/discordBlack.png';
-      insta.src = 'Images/instaBlack.png';
-      twitter.src = 'Images/twitterBlack.png';
-      newTheme = "default"; 
-    }
-    else {
-      disc.src = 'Images/discordBeige.png';
-      insta.src = 'Images/instaBeige.png';
-      twitter.src = 'Images/twitterBeige.png';
-      newTheme = "darkTheme";
-    }
-    // Set the theme
-    setTheme(currentTheme, newTheme);
+button.addEventListener("click", function() {
+  window.scrollTo({
+    top: target.offsetTop,
+    left: 0,
+    behavior: "smooth"
   });
+});
 
-  function setTheme(oldTheme, newTheme) {
-    bodyDiv.classList.remove(oldTheme);
-    bodyDiv.classList.add(newTheme);
-    // Store the new theme
-    localStorage.setItem("mytheme", newTheme);
-    // Update the current theme after the class changes have been made
-    currentTheme = newTheme;
-  }
+// In from right animation on scroll
 
-  // Open and close text section on click 
-  
-  document.querySelector(".aboutDiv").addEventListener("click", function() {
-    var aboutTxt = document.querySelector(".aboutTxt");
-    aboutTxt.classList.toggle("show");
-  });
-  
-  document.querySelector(".secondDiv").addEventListener("click", function() {
-    var secondTxt = document.querySelector(".secondTxt");
-    secondTxt.classList.toggle("show");
-  });
-  
-  document.querySelector(".contactDiv").addEventListener("click", function() {
-    var secondTxt = document.querySelector(".contactTxt");
-    secondTxt.classList.toggle("show");
-  });
-
-  // Disable arrow after click + scroll
-
-  let arrowId = document.getElementById("arrowA");
-  arrowId.addEventListener("click", function(){
-    this.href = "javascript:void(0)";
-    this.style.pointerEvents = "none";
-    this.style.cursor = "default";
-    this.style.opacity = "0";
-  });
-
-  window.onscroll = function() {
-    checkPosition();
-  };
-
-  function checkPosition() {
-    if (window.pageYOffset === 0) {
-      arrowId.href = "#"
-      arrowId.style.pointerEvents = "auto";
-      arrowId.style.cursor = "pointer";
-      arrowId.style.opacity = "1";
-    }
-  }
-
-  (function($) {
+(function($) {
     $.fn.visible = function(partial) {
       
         var $t            = $(this),
@@ -126,16 +59,93 @@ window.onload = function() {
     });
   });
 
-    // Arrow button, scroll animation on click
+// Disable arrow after click + scroll
 
-  let button = document.getElementById("arrowA");
-  let target = document.querySelector(".arrowA");
+let arrowId = document.getElementById("arrowA");
+arrowId.addEventListener("click", function(){
+  this.href = "javascript:void(0)";
+  this.style.pointerEvents = "none";
+  this.style.cursor = "default";
+  this.style.opacity = "0";
+});
 
-  button.addEventListener("click", function() {
-    window.scrollTo({
-      top: target.offsetTop,
-      left: 0,
-      behavior: "smooth"
-    });
-  });
+window.onscroll = function() {
+  checkPosition();
 };
+
+function checkPosition() {
+  if (window.pageYOffset === 0) {
+    arrowId.href = "#"
+    arrowId.style.pointerEvents = "auto";
+    arrowId.style.cursor = "pointer";
+    arrowId.style.opacity = "1";
+  }
+}
+
+// Change colors when lightbulb is clicked
+var lightbulb = document.querySelector('.lightbulb');
+var bodyDiv = document.querySelector(".bodyDiv");
+var disc = document.getElementById("discLogo");
+var insta = document.getElementById("instaLogo");
+var twitter = document.getElementById("twtLogo");
+var currentTheme;
+
+window.onload = function() {
+  let currentTheme = localStorage.getItem("mytheme") || "default";
+
+  if(currentTheme == 'default') {
+    setToDefault();
+  }
+  else {
+    setToDarkTheme();
+  }
+}
+
+lightbulb.addEventListener("click", function() {
+  if (currentTheme == 'default') {
+    setToDefault();
+  } else if (currentTheme == 'darkTheme') {
+    setToDarkTheme();
+  }
+});
+
+function setToDefault() {
+  bodyDiv.classList.remove("darkTheme");
+  bodyDiv.classList.add("default");
+  disc.src = 'Images/discordBlack.png';
+  insta.src = 'Images/instaBlack.png';
+  twitter.src = 'Images/twitterBlack.png';
+  
+  currentTheme = 'default';
+
+  localStorage.setItem("mytheme", currentTheme);
+}
+
+function setToDarkTheme() {
+  bodyDiv.classList.remove("default");
+  bodyDiv.classList.add("darkTheme");
+  disc.src = 'Images/discordBeige.png';
+  insta.src = 'Images/instaBeige.png';
+  twitter.src = 'Images/twitterBeige.png';
+
+  currentTheme = 'darkTheme';
+
+  localStorage.setItem("mytheme", currentTheme);
+}
+
+// Open and close text section on click 
+
+document.querySelector(".aboutDiv").addEventListener("click", function() {
+  var aboutTxt = document.querySelector(".aboutTxt");
+  aboutTxt.classList.toggle("show");
+});
+
+document.querySelector(".secondDiv").addEventListener("click", function() {
+  var secondTxt = document.querySelector(".secondTxt");
+  secondTxt.classList.toggle("show");
+});
+
+document.querySelector(".contactDiv").addEventListener("click", function() {
+  var secondTxt = document.querySelector(".contactTxt");
+  secondTxt.classList.toggle("show");
+});
