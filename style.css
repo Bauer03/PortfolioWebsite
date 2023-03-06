@@ -6,6 +6,7 @@
     --txtColor: black;
     --header: black;
     --nestedTxt: white;
+    --filter: 0;
 }
 
 .darkTheme {
@@ -14,6 +15,7 @@
     --txtColor: #ddb892;
     --header:#ddb892;
     --nestedTxt:white;
+    --filter: 100%;
 }
 
 /* Arrow intro animation */
@@ -68,6 +70,7 @@
     height: 6vmin;
     transform: scale(1);
     transition-duration: 0.25s;
+    filter: brightness(var(--filter));
 }
 
 .socialImg:hover {
@@ -103,6 +106,10 @@
 
 #lightDiv {
     animation: dropDown 1.8s;
+}
+
+#bulb:hover {
+    cursor: pointer;
 }
 
 @keyframes dropDown {
@@ -340,7 +347,7 @@
   .m-scroll {
     overflow: hidden;
     white-space: nowrap;
-    animation: scrollText 20s infinite linear 1.6s;
+    animation: scrollText 25s infinite linear 1.6s;
     margin: 0;
     padding: 0;
     font-size: 0;

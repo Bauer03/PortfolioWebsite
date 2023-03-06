@@ -1,7 +1,7 @@
 // Arrow button, scroll animation on click
 
 let button = document.getElementById("arrowA");
-let target = document.querySelector(".arrowA");
+let target = document.querySelector(".aboutBtn");
 
 button.addEventListener("click", function() {
   window.scrollTo({
@@ -83,7 +83,8 @@ function checkPosition() {
 }
 
 // Change colors when lightbulb is clicked
-var lightbulb = document.querySelector('.lightbulb');
+
+var lightbulb = document.getElementById("bulb");
 var bodyDiv = document.querySelector(".bodyDiv");
 var disc = document.getElementById("discLogo");
 var insta = document.getElementById("instaLogo");
@@ -91,7 +92,7 @@ var twitter = document.getElementById("twtLogo");
 var currentTheme;
 
 window.onload = function() {
-  let currentTheme = localStorage.getItem("mytheme") || "default";
+  currentTheme = localStorage.getItem("mytheme") || 'default';
 
   if(currentTheme == 'default') {
     setToDefault();
@@ -110,26 +111,16 @@ lightbulb.addEventListener("click", function() {
 });
 
 function setToDefault() {
-  bodyDiv.classList.remove("darkTheme");
-  bodyDiv.classList.add("default");
-  disc.src = 'Images/discordBlack.png';
-  insta.src = 'Images/instaBlack.png';
-  twitter.src = 'Images/twitterBlack.png';
-  
+  bodyDiv.classList.toggle("darkTheme");
+  bodyDiv.classList.toggle("default");
   currentTheme = 'default';
-
   localStorage.setItem("mytheme", currentTheme);
 }
 
 function setToDarkTheme() {
-  bodyDiv.classList.remove("default");
-  bodyDiv.classList.add("darkTheme");
-  disc.src = 'Images/discordBeige.png';
-  insta.src = 'Images/instaBeige.png';
-  twitter.src = 'Images/twitterBeige.png';
-
+  bodyDiv.classList.toggle("default");
+  bodyDiv.classList.toggle("darkTheme");
   currentTheme = 'darkTheme';
-
   localStorage.setItem("mytheme", currentTheme);
 }
 
@@ -146,6 +137,6 @@ document.querySelector(".secondDiv").addEventListener("click", function() {
 });
 
 document.querySelector(".contactDiv").addEventListener("click", function() {
-  var secondTxt = document.querySelector(".contactTxt");
-  secondTxt.classList.toggle("show");
+  var contactTxt = document.querySelector(".contactTxt");
+  contactTxt.classList.toggle("show");
 });
