@@ -130,19 +130,20 @@
     overflow: hidden;
     max-height: 0;
     display: none;
-    color: var(--nestedTxt-def);
+    color: var(--nestedTxt);
+    transform: translateY(0%);
 }
 
 .contactTxt.show {
-    max-height: 100%;
+    transform: translateY(100%);
     display: contents;
+
 }
 
 .contactDiv {
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
-    background-color: var(--bckg);
 }
 
 .secondTxt {
@@ -151,7 +152,7 @@
     overflow: hidden;
     max-height: 0;
     display: none;
-    color: var(--nestedTxt-def);
+    color: var(--nestedTxt);
 }
 
 .secondTxt.show {
@@ -163,7 +164,17 @@
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
-    background-color: var(--bckg);
+}
+
+.aboutTxt {
+    font-family: 'Comfortaa', sans-serif;
+    display: none;
+    transition: all 0.3s ease-out;
+}
+
+.aboutTxt.show{
+    display: contents;
+    color: black;
 }
 
 .contactDiv:hover{
@@ -181,25 +192,20 @@
     animation-fill-mode: forwards;
 }
 
-.aboutTxt {
-    font-family: 'Comfortaa', sans-serif;
-    transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    max-height: 0;
-    display: none;
-    color: var(--nestedTxt-def);
+@keyframes changeColor {
+    to {
+        background-color: var(--nestedTxt);
+    }
 }
 
-.aboutTxt.show{
-    max-height: 100%;
-    display: contents;
+.bgWhite {
+    background-color: white;
 }
 
 .aboutDiv {
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
-    background-color: var(--bckg);
 }
 
 .Btn {
@@ -218,15 +224,6 @@
 
 .changePtr:hover{
     cursor: pointer;
-}
-
-@keyframes changeColor {
-    0% {
-        background-color: inherit;
-    }
-    100% {
-        background-color: var(--nestedTxt);
-    }
 }
 
 .lightbulb {

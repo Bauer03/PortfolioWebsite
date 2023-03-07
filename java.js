@@ -104,22 +104,22 @@ window.onload = function() {
 
 lightbulb.addEventListener("click", function() {
   if (currentTheme == 'default') {
-    setToDefault();
-  } else if (currentTheme == 'darkTheme') {
     setToDarkTheme();
+  } else if (currentTheme == 'darkTheme') {
+    setToDefault();
   }
 });
 
 function setToDefault() {
-  bodyDiv.classList.toggle("darkTheme");
-  bodyDiv.classList.toggle("default");
+  bodyDiv.classList.remove("darkTheme");
+  bodyDiv.classList.add("default");
   currentTheme = 'default';
   localStorage.setItem("mytheme", currentTheme);
 }
 
 function setToDarkTheme() {
-  bodyDiv.classList.toggle("default");
-  bodyDiv.classList.toggle("darkTheme");
+  bodyDiv.classList.remove("default");
+  bodyDiv.classList.add("darkTheme");
   currentTheme = 'darkTheme';
   localStorage.setItem("mytheme", currentTheme);
 }
@@ -127,16 +127,16 @@ function setToDarkTheme() {
 // Open and close text section on click 
 
 document.querySelector(".aboutDiv").addEventListener("click", function() {
-  var aboutTxt = document.querySelector(".aboutTxt");
-  aboutTxt.classList.toggle("show");
+  document.querySelector(".aboutTxt").classList.toggle("show");
+  this.classList.toggle("bgWhite");
 });
 
 document.querySelector(".secondDiv").addEventListener("click", function() {
-  var secondTxt = document.querySelector(".secondTxt");
-  secondTxt.classList.toggle("show");
+  document.querySelector(".secondTxt").classList.toggle("show");
+  this.classList.toggle("bgWhite");
 });
 
 document.querySelector(".contactDiv").addEventListener("click", function() {
-  var contactTxt = document.querySelector(".contactTxt");
-  contactTxt.classList.toggle("show");
+  document.querySelector(".contactTxt").classList.toggle("show");
+  this.classList.toggle("bgWhite");
 });
