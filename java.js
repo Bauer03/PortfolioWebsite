@@ -59,7 +59,7 @@ button.addEventListener("click", function() {
     });
   });
 
-// Disable arrow after click + scroll
+// Disable arrow after click, scroll page
 
 let arrowId = document.getElementById("arrowA");
 arrowId.addEventListener("click", function(){
@@ -89,11 +89,9 @@ var bodyDiv = document.querySelector(".bodyDiv");
 var disc = document.getElementById("discLogo");
 var insta = document.getElementById("instaLogo");
 var twitter = document.getElementById("twtLogo");
-var currentTheme;
 
 window.onload = function() {
-  currentTheme = localStorage.getItem("mytheme") || 'default';
-
+  var currentTheme = localStorage.getItem("mytheme") || 'default';
   if(currentTheme == 'default') {
     setToDefault();
   }
@@ -111,7 +109,7 @@ lightbulb.addEventListener("click", function() {
 });
 
 function setToDefault() {
-  bodyDiv.classList.remove("darkTheme");
+  bodyDiv.classList.remove("darkTheme"); // Todo: Simplify
   bodyDiv.classList.add("default");
   currentTheme = 'default';
   localStorage.setItem("mytheme", currentTheme);
@@ -124,19 +122,23 @@ function setToDarkTheme() {
   localStorage.setItem("mytheme", currentTheme);
 }
 
-// Open and close text section on click 
+// Open and close text section on click
 
-document.querySelector(".aboutDiv").addEventListener("click", function() {
-  document.querySelector(".aboutTxt").classList.toggle("show");
-  this.classList.toggle("bgWhite");
-});
+var abtDiv = document.querySelector(".aboutDiv");
+var abtTxt = document.querySelector(".aboutTxt");
 
-document.querySelector(".secondDiv").addEventListener("click", function() {
-  document.querySelector(".secondTxt").classList.toggle("show");
-  this.classList.toggle("bgWhite");
-});
+abtDiv.addEventListener("click", function(){
+  if(abtTxt.classList.contains('show')) {
+    abtTxt.classList.replace('show','hide');
+  }
+  else {
+    abtTxt.classList.replace('hide','show');
 
-document.querySelector(".contactDiv").addEventListener("click", function() {
-  document.querySelector(".contactTxt").classList.toggle("show");
-  this.classList.toggle("bgWhite");
-});
+    // Scroll to abtDiv element
+    window.scrollTo({
+      top: abtDiv.offsetTop,
+      left: 0,
+      behavior: "auto"
+    });
+  }
+})

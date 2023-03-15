@@ -2,19 +2,15 @@
 
 .default {
     --bckg: #ddb892;
-    --bckg-sec: black;
     --txtColor: black;
-    --header: black;
-    --nestedTxt: white;
+    --nestedTxt: #ad8c6e;
     --filter: 0;
 }
 
 .darkTheme {
     --bckg: black;
-    --bckg-sec: #ddb892;
     --txtColor: #ddb892;
-    --header:#ddb892;
-    --nestedTxt:white;
+    --nestedTxt:#31281f;
     --filter: 100%;
 }
 
@@ -66,6 +62,8 @@
     transform: scale(1.2);
 }
 
+/* Styling */
+
 .socialImg {
     height: 6vmin;
     transform: scale(1);
@@ -100,7 +98,7 @@
 
 .scrollBox, #firstPart, #secondPart {
     transition: background-color 0.7s, color 0.3s;
-    background-color: var(--bckg-sec);
+    background-color: var(--txtColor);
     color: var(--bckg);
 }
 
@@ -124,20 +122,10 @@
     }
 }
 
-.contactTxt {
-    font-family: 'Comfortaa', sans-serif;
-    transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    max-height: 0;
-    display: none;
-    color: var(--nestedTxt);
-    transform: translateY(0%);
-}
-
-.contactTxt.show {
-    transform: translateY(100%);
-    display: contents;
-
+.aboutDiv {
+    padding: 3vw;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .contactDiv {
@@ -146,36 +134,92 @@
     margin-right: 0;
 }
 
-.secondTxt {
-    font-family: 'Comfortaa', sans-serif;
-    transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    max-height: 0;
-    display: none;
-    color: var(--nestedTxt);
-}
-
-.secondTxt.show {
-    max-height: 100%;
-    display: contents;
-}
-
 .secondDiv{
     padding: 3vw;
     margin-left: 0;
     margin-right: 0;
 }
 
+/* Style text opening and closing on click */
+
 .aboutTxt {
     font-family: 'Comfortaa', sans-serif;
-    display: none;
-    transition: all 0.3s ease-out;
+    background-color: black;
+    color: var(--nestedTxt);
+    border-radius: 8px;
+    max-height: 0;
+    overflow: hidden;
 }
 
 .aboutTxt.show{
-    display: contents;
-    color: black;
+    animation-name: show;
+    animation-fill-mode: forwards;
+    animation-duration: 0.55s;
+    animation-timing-function: ease-out;
+    padding-left: 3vw;
+    padding-right: 3vw;
 }
+
+.aboutTxt.hide {
+    animation-name: hide;
+    animation-fill-mode: forwards;
+    animation-duration: 0.45s;
+    animation-timing-function: ease-out;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+@keyframes hide {
+    from {
+        max-height: 300px;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+        margin: 2vw;
+    }
+    to {
+        max-height: 0px;
+        padding-top: 0vw;
+        padding-bottom: 0vw;
+        margin: 0vw;
+    }
+}
+
+@keyframes show {
+    from {
+        max-height: 0px;
+        padding-top: 0vw;
+        padding-bottom: 0vw;
+        margin-top: 0vw;
+        margin-bottom: 0vw;
+    }
+    to {
+        max-height: 300px;
+        padding-top: 3vw;
+        padding-bottom: 3vw;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+}
+
+.contactTxt {
+    font-family: 'Comfortaa', sans-serif;
+    display: none;
+}
+
+.contactTxt.show {
+    display: inline;
+}
+
+.secondTxt {
+    font-family: 'Comfortaa', sans-serif;
+    display: none;
+}
+
+.secondTxt.show {
+    display: contents;
+}
+
+/* Hover animations */
 
 .contactDiv:hover{
     animation: changeColor 0.5s; 
@@ -196,16 +240,6 @@
     to {
         background-color: var(--nestedTxt);
     }
-}
-
-.bgWhite {
-    background-color: white;
-}
-
-.aboutDiv {
-    padding: 3vw;
-    margin-left: 0;
-    margin-right: 0;
 }
 
 .Btn {
