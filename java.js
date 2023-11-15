@@ -1,144 +1,71 @@
-// Arrow button, scroll animation on click
+// Please make sure you're not accessing this page on Safari! :)
 
-let button = document.getElementById("arrowA");
-let target = document.querySelector(".aboutBtn");
+var navMenu = document.querySelector(".navMenu");
 
-button.addEventListener("click", function() {
-  window.scrollTo({
-    top: target.offsetTop,
-    left: 0,
-    behavior: "smooth"
-  });
-});
+var homeLink = document.getElementById("home-link");
+var homeSection = document.getElementById("home-section");
+var aboutLink = document.getElementById("about-link");
+var aboutSection = document.getElementById("about-section");
+var projectsLink = document.getElementById("projects-link");
+var projectsSection = document.getElementById("projects-section");
+var contactLink = document.getElementById("contact-link");
+var contactSection = document.getElementById("contact-section");
 
-// In from right animation on scroll
-
-(function($) {
-    $.fn.visible = function(partial) {
-      
-        var $t            = $(this),
-            $w            = $(window),
-            viewTop       = $w.scrollTop(),
-            viewBottom    = viewTop + $w.height(),
-            _top          = $t.offset().top,
-            _bottom       = _top + $t.height(),
-            compareTop    = partial === true ? _bottom : _top,
-            compareBottom = partial === true ? _top : _bottom;
-      
-      return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-  
-    };
-      
-  })(jQuery);
-  
-  var win = $(window);
-  
-  var allMods = $(".inFromRight");
-  
-  allMods.each(function(i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("already-visible"); 
-    } 
-  });
-  
-  win.scroll(function(event) {
-    
-    allMods.each(function(i, el) {
-      var el = $(el);
-      if (el.visible(true)) {
-        el.addClass("come-in"); 
-      } 
-    });
-    allMods.each(function(i, el) {
-        var el = $(el);
-        if (!el.visible(true)) {
-            el.removeClass("come-in");
-            el.removeClass("already-visible");
-        }
-    });
-  });
-
-// Disable arrow after click, scroll page
-
-let arrowId = document.getElementById("arrowA");
-arrowId.addEventListener("click", function(){
-  this.href = "javascript:void(0)";
-  this.style.pointerEvents = "none";
-  this.style.cursor = "default";
-  this.style.opacity = "0";
-});
-
-window.onscroll = function() {
-  checkPosition();
-};
-
-function checkPosition() {
-  if (window.pageYOffset === 0) {
-    arrowId.href = "#"
-    arrowId.style.pointerEvents = "auto";
-    arrowId.style.cursor = "pointer";
-    arrowId.style.opacity = "1";
-  }
-}
-
-// Change colors when lightbulb is clicked
-
-var lightbulb = document.getElementById("bulb");
-var bodyDiv = document.querySelector(".bodyDiv");
-var disc = document.getElementById("discLogo");
-var insta = document.getElementById("instaLogo");
-var twitter = document.getElementById("twtLogo");
-
+let currentTheme = 'dark';
 window.onload = function() {
-  var currentTheme = localStorage.getItem("mytheme") || 'default';
-  if(currentTheme == 'default') {
-    setToDefault();
+  currentTheme = localStorage.getItem("mytheme") || 'light';
+  if(currentTheme == 'light') {
+    setToLightTheme();
   }
   else {
     setToDarkTheme();
   }
 }
 
-lightbulb.addEventListener("click", function() {
-  if (currentTheme == 'default') {
-    setToDarkTheme();
-  } else if (currentTheme == 'darkTheme') {
-    setToDefault();
-  }
-});
+homeLink.addEventListener('click', () => {
+  console.log(homeLink.innerHTML);
+  homeSection.scrollIntoView({ behavior: "smooth"});
+})
 
-function setToDefault() {
-  bodyDiv.classList.remove("darkTheme"); // Todo: Simplify
-  bodyDiv.classList.add("default");
-  currentTheme = 'default';
+aboutLink.addEventListener('click', () => {
+  console.log(aboutLink.innerHTML);
+  aboutSection.scrollIntoView({ behavior: "smooth"});
+})
+
+projectsLink.addEventListener('click', () => {
+  console.log(projectsLink.innerHTML);
+  projectsSection.scrollIntoView({ behavior: "smooth"});
+})
+
+contactLink.addEventListener('click', () => {
+  console.log(contactLink.innerHTML);
+  contactSection.scrollIntoView({ behavior: "smooth"}); 
+})
+
+var navLinks = document.querySelectorAll('.navLinkInner');
+  navLinks.forEach(function(navLink) {
+    navLink.addEventListener('click', function() {
+      if (!navLink.classList.contains('active')) { // if the navLink clicked doesn't have class "active"
+        navLinks.forEach(function(link) {
+          link.classList.remove('active'); // remove "active" from all other navLinks
+        });
+        navLink.classList.add('active'); // add "active" class to all other navLinks
+      }
+    });
+  });
+
+function setToLightTheme() {
+  document.body.classList.remove("dark");
+  document.body.classList.add("light");
+  currentTheme = 'light';
   localStorage.setItem("mytheme", currentTheme);
+  // console.log("Attempting to set theme to light")
 }
 
 function setToDarkTheme() {
-  bodyDiv.classList.remove("default");
-  bodyDiv.classList.add("darkTheme");
-  currentTheme = 'darkTheme';
+  document.body.classList.remove("light");
+  document.body.classList.add("dark");
+  currentTheme = 'dark';
   localStorage.setItem("mytheme", currentTheme);
+  // console.log("Attempting to set theme to dark")
 }
-
-// Open and close text section on click
-
-var abtDiv = document.querySelector(".aboutDiv");
-var abtTxt = document.querySelector(".aboutTxt");
-
-abtDiv.addEventListener("click", function(){
-  if(abtTxt.classList.contains('show')) {
-    abtTxt.classList.replace('show','hide');
-  }
-  else {
-    abtTxt.classList.replace('hide','show');
-
-    // Scroll to abtDiv element
-    window.scrollTo({
-      top: abtDiv.offsetTop,
-      left: 0,
-      behavior: "auto"
-    });
-  }
-})
