@@ -14,17 +14,19 @@
 }
 
 .dark {
+    --txtActive:#ffd4a9;
     --bckg: black;
     --txtColor: #ddb892;
-    --txtActive:#ffd4a9;
 }
 
 /* General styling for theme */
 
 body {
-    background-color: var(--txtColor);
+    background-color: var(--bckg);
     transition: background-color 0.7s, color 0.3s;
     scroll-behavior: smooth;
+    scrollbar-width: 0px;
+    -wbkit-scrollbar-width:0px;
 }
 
 .scrollBox, #firstPart, #secondPart {
@@ -33,12 +35,18 @@ body {
     text-transform: uppercase;
 }
 
+.material-symbols-outlined{
+    color: var(--bckg);
+    font-size: 3em;
+}
+
 /* Style text opening and closing on click */
 
 .name-section {
     display: grid;
     grid-template-rows: auto;
     align-items: center;
+    padding-inline: 3em;
 
     /* Animations */
     animation-name: ease-from-left;
@@ -46,39 +54,17 @@ body {
     animation-timing-function: ease;
 }
 
-.outer-div{
-    display: grid;
-    grid-template-columns: auto 1fr;
-    min-height: 100dvh;
-    max-width: 100%;
-    
-    scrollbar-width: 0px;
-    -webkit-scrollbar-width: 0px;
-}
-
-.left-section {
+.content-section {
     display: grid;
     align-content: center;
     grid-template-columns: auto;
-    background-color: var(--bckg);
-    padding-inline-start: 3em;
-    padding-inline-end: 12em;
+    width: calc(100vw - 450px);
 }
 
 .page-section { 
     display: grid;
     align-content: center;
     height: 100dvh;
-}
-
-.right-section {
-    display: grid;
-    align-content: center;
-    background-color: var(--txtColor);
-    position:sticky;
-    height: 100dvh;
-    right: 0px;
-    top: 0px;
 }
 
 .Paul, .Bauer {
@@ -93,16 +79,26 @@ body {
     align-content: center;
 }
 
-.navMenu {
+.nav-menu {
     /* Formatting */
     display: grid;
     justify-items: self-end;
     grid-template-rows: auto;
     gap: 6.5em;
+
     padding-inline-end: 3em;
     padding-inline-start: 6em;
+    padding-block: 9em;
 
+    height: 100dvh;
+    width: 450px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 2000;
+    
     /* Styling */
+    background-color: var(--txtColor);
     text-transform: uppercase;
     font-family: var(--font);
 
@@ -110,6 +106,11 @@ body {
     animation-duration: 1.2s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
+}
+
+#menu-toggle {
+    position: fixed;
+    color: transparent;
 }
 
 .navLink {
@@ -124,6 +125,10 @@ body {
     animation-duration: .2s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
+}
+
+.navLinkInner.active::before     {
+    content: "•";
 }
 
 @keyframes activeOn {
@@ -150,9 +155,10 @@ body {
 }
 
 .blob-container {
-    height: 100%;
+    min-height: 600px;
     background-color: var(--txtColor);
     border-radius: 5px;
+    margin-inline: 3em;
 }
 
 /* End on-scroll styling and animations */
@@ -222,12 +228,37 @@ body {
     }
 }
 
-@media (max-width:500px) {
-    :root {
-        --fsDef: 5rem;
+@media (max-width:1350px) {
+    .content-section {
+        width: 100dvw;
     }
-    
-    .scrollTxt {
-        font-size: 1.5rem;
+
+    .nav-menu {
+        right: -450px;
+        transition-duration:400ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .nav-menu.menu-open {
+        right: 0px;
+    }
+
+    .blob-section {
+        margin-inline-end: 0px;
+    }
+
+    #menu-toggle {
+        color: var(--txtColor);
+        top: 1em;
+        right: 1em;
+        z-index: 4000;
+        cursor: pointer;
+        rotate: 0deg;
+        transition:rotate 0.7s cubic-bezier(0.05, 0.3, 0.05, 1);
+    }
+
+    #menu-toggle.menu-open {
+        color: var(--bckg);
+        rotate:90deg;
     }
 }
