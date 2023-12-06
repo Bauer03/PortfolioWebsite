@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                         September 2023
                                     </div>
                                     <div class="proj-timeline-body">
-                                        The development for this project took course over
+                                        The development for this project took place over
                                         about two weeks, from start to finish.
                                     </div>
                                 </div>
@@ -117,10 +117,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                         Skills/Takeaways:
                                     </div>
                                     <div class="proj-takeaways-body">
-                                        Introducted to single-section websites
+                                        Introducted to single-page websites
                                     </div>
                                     <div class="proj-takeaways-body">
-                                        Started becoming familiar with responsive design
+                                        Learned to deal with responsive design and collapsible menus
                                     </div>
                                 </div>
                             </div>
