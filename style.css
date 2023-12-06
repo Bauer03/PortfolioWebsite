@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
     --font: Arial Rounded MT Bold; 
-    --fsDef: 14rem;
+    --name-size: 14rem;
 }
 /* Color themes*/
 
@@ -14,9 +14,9 @@
 }
 
 .dark {
-    --txtActive:#ffd4a9;
     --bckg: black;
     --txtColor: #ddb892;
+    --txtActive:#ffd4a9;
 }
 
 /* General styling for theme */
@@ -26,7 +26,7 @@ body {
     transition: background-color 0.7s, color 0.3s;
     scroll-behavior: smooth;
     scrollbar-width: 0px;
-    -wbkit-scrollbar-width:0px;
+    -webkit-scrollbar-width:0px;
 }
 
 .scrollBox, #firstPart, #secondPart {
@@ -65,11 +65,12 @@ body {
     display: grid;
     align-content: center;
     height: 100dvh;
+    color: var(--bckg);
 }
 
 .Paul, .Bauer {
     color: var(--txtColor);
-    font-size: var(--fsDef);
+    font-size: var(--name-size);
     font-family: var(--font);
     font-weight: bolder;
     text-transform: uppercase;
@@ -159,6 +160,78 @@ body {
     background-color: var(--txtColor);
     border-radius: 5px;
     margin-inline: 3em;
+    padding: 5em;
+}
+
+.blob-container.contact {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.contact-message {
+    margin-bottom: 2em;
+    padding-right: 1em;
+}
+
+.contact-message >*{
+    font-family: var(--font);
+    width: 100%;
+    font-size: larger;
+}
+
+.contact-h1 {
+    font-size: xx-large;
+}
+
+.form-section{
+    display: grid;
+    align-items: center;
+    justify-self: end;
+    height: min-content;
+    gap: 18%;
+    width: 100%;
+    font-size: larger;
+}
+
+.form-section >* {
+    font-family: var(--font);
+    text-transform: uppercase;
+}
+
+.form-div *>{
+    background-color: none;
+}
+
+.form-field{
+    width: 100%;
+    padding: 15px 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #666;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+    color: var(--bckg);
+}
+
+.form-field:focus {
+    border-bottom-color: var(--bckg);
+  }
+
+.submit-btn{
+    background: none;
+    border: 2px solid var(--bckg);
+    border-radius: 2px;
+    color: var(--bckg);
+    padding: 10px;
+}
+
+.contact-h1 {
+    margin-bottom: 1em;
+}
+
+.contact-h1 >* {
+    border-bottom: 4px #ddb892 solid;
 }
 
 /* End on-scroll styling and animations */
@@ -239,12 +312,20 @@ body {
         transition-timing-function: ease-in-out;
     }
 
+    .name-section {
+        padding-inline:1em;
+    }
+
     .nav-menu.menu-open {
         right: 0px;
     }
 
     .blob-section {
         margin-inline-end: 0px;
+    }
+
+    .blob-container {
+        margin-inline: 1em;
     }
 
     #menu-toggle {
@@ -260,5 +341,40 @@ body {
     #menu-toggle.menu-open {
         color: var(--bckg);
         rotate:90deg;
+    }
+}
+
+@media (max-width:840px) {
+    * {
+        --name-size:10rem;
+    }
+
+    .scrollBox {
+        width: 400px;
+    }
+    
+    .blob-container.contact {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        gap: 4%;
+        padding-bottom: 1em;
+    }
+}
+
+@media (max-width:600px) {
+    * {
+        --name-size:7rem;
+    }
+
+
+    .scrollBox {
+        width: 350px;
+    }
+    
+    #menu-toggle {
+        top: 0.5em;
+        right: 0.5em;
     }
 }
