@@ -39,7 +39,6 @@ body {
 }
 
 .material-symbols-outlined{
-    color: var(--bckg);
     font-size: 3em;
 }
 
@@ -182,7 +181,6 @@ body {
 
 .blob-container.proj-blob{
     padding-block: 2em;
-    overflow-y: scroll;
 }
 
 .about-top {
@@ -384,7 +382,6 @@ a .material-symbols-outlined {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4em;
-    height: 538px;
 }
 
 .proj-gallery >*{
@@ -485,7 +482,7 @@ a .material-symbols-outlined {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    border-radius: 15px;
+    border-radius: 10px;
     max-width: 520px;   
     height: 50%;
 }

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
           markup: `
             <div class="proj-left">
               <div class="proj-left-top">
-                <video class="proj-video" muted="true" src="Images/Screen Recording 2023-11-30 at 3.06.20 PM.mov" loop="true" autoplay="true"></video>
+              <video class="proj-video" src="Images/Screen Recording 2023-11-30 at 3.06.20 PM.mov" loop muted autoplay></video>
               </div>
               <div class="proj-left-bottom">
                 <div class="proj-name">

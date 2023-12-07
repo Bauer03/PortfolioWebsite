@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             markup: `
             <div class="proj-left">
               <div class="proj-left-top">
-                <video class="proj-video" muted="true" src="Images/Screen Recording 2023-11-30 at 3.06.20 PM.mov" loop="true" autoplay="true"></video>
+              <video class="proj-video" src="Images/Screen Recording 2023-11-30 at 3.06.20 PM.mov" loop muted autoplay></video>
               </div>
               <div class="proj-left-bottom">
                 <div class="proj-name">
@@ -126,22 +126,16 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     // Initialize the currently displayed project
     var currentProjectIndex = 0;
-    // Function to update projGallery's innerHTML based on the current project
+    // update projGallery's innerHTML based on the current project
     function updateGallery() {
         projGallery.innerHTML = projects[currentProjectIndex].markup;
     }
-    // Event listener for the "previous" button
     prevBtn.addEventListener("click", function () {
-        // Decrement the current project index
         currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
-        // Update the gallery
         updateGallery();
     });
-    // Event listener for the "next" button
     nextBtn.addEventListener("click", function () {
-        // Increment the current project index
         currentProjectIndex = (currentProjectIndex + 1) % projects.length;
-        // Update the gallery
         updateGallery();
     });
 });
